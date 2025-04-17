@@ -1,4 +1,4 @@
-import weasyprint 
+import weasyprint
 from flask import Flask, render_template, request, send_file
 import os
 from io import BytesIO
