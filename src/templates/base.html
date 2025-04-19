@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro CV Maker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-logo">Classic CVmaker</div>
+  <ul class="navbar-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/">Generate CV</a></li>
+  </ul>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  {% block content %}
+  {% endblock %}
+</div>
+
+<!-- CONTRIBUTORS SECTION -->
+<section class="contributors">
+    <h2>Contributors</h2>
+    <table class="contributors-table">
+      <tr>
+        <td>
+          <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="John Doe">
+          <h3>John Doe</h3>
+          <p><b>✍️ Design & Frontend</b></p>
+          <p><a href="#">GitHub</a> | <a href="#">LinkedIn</a></p>
+        </td>
+        <td>
+          <img src="{{ url_for('static', filename='images/user2.jpg') }}" alt="Jane Smith">
+          <h3>Jane Smith</h3>
+          <p><b>💻 Backend & PDF Export</b></p>
+          <p><a href="#">GitHub</a> | <a href="#">Twitter</a></p>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2025 RetroCV | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Contact</a></p>
+</footer>
+
+</body>
+</html>
