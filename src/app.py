@@ -22,7 +22,10 @@ def index():
             "languages": request.form["languages"],
             "certifications": request.form["certifications"]
         }
-        html_content = render_template("cv_output.html", data=data)
+        
+        # Pass the style for PDF rendering, it can be empty or set to specific style for PDF
+        html_content = render_template("cv_output.html", data=data, cv_style="pdf-style")
+
         pdf = weasyprint.HTML(string=html_content).write_pdf()
 
         pdf_io = BytesIO(pdf)
@@ -36,4 +39,4 @@ def about():
     return render_template("about.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

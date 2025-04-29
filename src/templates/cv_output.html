@@ -1,23 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Your CV</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
   <div class="container cv-output">
     <h2>{{ data.name }}</h2>
     <p><strong>Email:</strong> {{ data.email }} | <strong>Phone:</strong> {{ data.phone }}</p>
     <p><strong>Address:</strong> {{ data.address }} | <strong>Website:</strong> {{ data.website }}</p>
-    <p><strong>DOB:</strong> {{ data.dob }} | <strong>Gender:</strong> {{ data.gender }}</p>
+    <p><strong>Date of Birth:</strong> {{ data.dob }} | <strong>Gender:</strong> {{ data.gender }}</p>
 
-    <h3>Summary</h3><p>{{ data.summary }}</p>
-    <h3>Experience</h3><p>{{ data.experience }}</p>
-    <h3>Education</h3><p>{{ data.education }}</p>
-    <h3>Skills</h3><p>{{ data.skills }}</p>
-    <h3>Languages</h3><p>{{ data.languages }}</p>
-    <h3>Certifications</h3><p>{{ data.certifications }}</p>
+    <h3>Summary</h3>
+    <p>{{ data.summary }}</p>
+
+    <h3>Experience</h3>
+    <p>{{ data.experience }}</p>
+
+    <h3>Education</h3>
+    <p>{{ data.education }}</p>
+
+    <h3>Skills</h3>
+    <p>{{ data.skills }}</p>
+
+    <h3>Languages</h3>
+    <p>{{ data.languages }}</p>
+
+    <h3>Certifications</h3>
+    <ul>
+      {% for cert in data.certifications.split('\n') %}
+        <li>{{ cert.strip() }}</li>
+      {% endfor %}
+    </ul>
   </div>
-</body>
-</html>
+{% endblock %}
