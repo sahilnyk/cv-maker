@@ -1,18 +1,17 @@
 {% extends "base.html" %}
-
 {% block content %}
 <header>
   <h1>Classic CV Maker</h1>
-  <p>* This is a prototype version, not fully functional *</p>
+  <p>Professional CV generator from the golden web era</p>
 </header>
 
-<form action="/" method="POST">
-  <h2>Basic Information</h2>
+<form action="/" method="POST" class="cv-form">
+  <h2>Basic Info</h2>
   <label for="name">Full Name</label>
-  <input type="text" id="name" name="name">
+  <input type="text" id="name" name="name" required>
 
   <label for="email">Email</label>
-  <input type="email" id="email" name="email">
+  <input type="email" id="email" name="email" required>
 
   <label for="phone">Phone</label>
   <input type="text" id="phone" name="phone">
@@ -34,42 +33,24 @@
     <option value="Other">Other</option>
   </select>
 
-  <div class="section-divider"></div>
-
-  <h2>Summary</h2>
-  <label for="summary">Professional Summary</label>
-  <textarea id="summary" name="summary" rows="4"></textarea>
-
-  <div class="section-divider"></div>
+  <h2>Professional Summary</h2>
+  <textarea name="summary" rows="4"></textarea>
 
   <h2>Experience</h2>
-  <label for="experience">Work Experience</label>
-  <textarea id="experience" name="experience" rows="6"></textarea>
-
-  <div class="section-divider"></div>
+  <textarea name="experience" rows="5"></textarea>
 
   <h2>Education</h2>
-  <label for="education">Education</label>
-  <textarea id="education" name="education" rows="4"></textarea>
-
-  <div class="section-divider"></div>
+  <textarea name="education" rows="4"></textarea>
 
   <h2>Skills</h2>
-  <label for="skills">Key Skills</label>
-  <textarea id="skills" name="skills" rows="3"></textarea>
-
-  <div class="section-divider"></div>
+  <textarea name="skills" rows="3"></textarea>
 
   <h2>Languages</h2>
-  <label for="languages">Languages</label>
-  <textarea id="languages" name="languages" rows="2"></textarea>
-
-  <div class="section-divider"></div>
+  <textarea name="languages" rows="2"></textarea>
 
   <h2>Certifications</h2>
-  <label for="certifications">Certifications</label>
-  <textarea id="certifications" name="certifications" rows="3"></textarea>
+  <textarea name="certifications" rows="3"></textarea>
 
-  <button type="submit">Generate CV (PDF)</button>
+  <button type="submit"><i class="fas fa-download"></i> Generate CV (PDF)</button>
 </form>
 {% endblock %}
