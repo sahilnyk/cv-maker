@@ -235,3 +235,117 @@ button:hover {
 .contributor-box a:hover {
     color: #00ccff;
 }
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* Navbar adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .navbar-logo {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Container adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2,
+    h3 {
+        font-size: 20px;
+    }
+
+    .section-divider {
+        margin: 30px 0;
+    }
+
+    form label,
+    input,
+    textarea,
+    select {
+        font-size: 14px;
+    }
+
+    .button-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    button {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+
+    .contributor-box {
+        padding: 15px;
+    }
+
+    .contributor-box h3 {
+        font-size: 16px;
+    }
+
+    .template-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Further responsiveness for very small screens */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-logo {
+        font-size: 18px;
+    }
+
+    .navbar-links {
+        gap: 10px;
+    }
+
+    .container {
+        padding: 10px;
+        margin: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2,
+    h3 {
+        font-size: 18px;
+    }
+
+    .button-row button {
+        font-size: 14px;
+    }
+
+    .footer {
+        font-size: 10px;
+    }
+}
