@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container creative-template" style="font-family: 'Segoe UI', sans-serif; background: #f4f4f8; padding: 2rem; max-width: 1000px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+  <div style="display: flex; justify-content: space-between;">
+    <div>
+      <h1 style="margin: 0; color: #003366;">{{ data.name }}</h1>
+      <p>{{ data.email }} | {{ data.phone }}</p>
+      <p>{{ data.website }}</p>
+    </div>
+    <div style="text-align: right;">
+      <p><strong>Address:</strong> {{ data.address }}</p>
+      <p><strong>DOB:</strong> {{ data.dob }}</p>
+      <p><strong>Gender:</strong> {{ data.gender }}</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 1rem;">
+    <h2 style="background: #003366; color: white; padding: 0.4rem; margin: 0;">🧠 Summary</h2>
+    <p>{{ data.summary }}</p>
+
+    <h2 style="background: #003366; color: white; padding: 0.4rem; margin: 0;">💼 Experience</h2>
+    <p>{{ data.experience }}</p>
+
+    <h2 style="background: #003366; color: white; padding: 0.4rem; margin: 0;">🎓 Education</h2>
+    <p>{{ data.education }}</p>
+
+    <h2 style="background: #003366; color: white; padding: 0.4rem; margin: 0;">🛠️ Skills</h2>
+    <ul>
+      {% for skill in data.skills.split(',') %}
+        <li>{{ skill.strip() }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2 style="background: #003366; color: white; padding: 0.4rem; margin: 0;">🌐 Languages</h2>
+    <ul>
+      {% for lang in data.languages.split(',') %}
+        <li>{{ lang.strip() }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2 style="background: #003366; color: white; padding: 0.4rem; margin: 0;">🏅 Certifications</h2>
+    <ul>
+      {% for cert in data.certifications.split('\n') %}
+        <li>{{ cert.strip() }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

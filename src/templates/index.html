@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block content %}
 <header>
   <h1>Classic CV Maker</h1>
@@ -7,14 +8,15 @@
 
 <form action="/" method="POST">
   <h2>Basic Information</h2>
+  
   <label for="name">Full Name</label>
-  <input type="text" id="name" name="name">
+  <input type="text" id="name" name="name" required>
 
   <label for="email">Email</label>
-  <input type="email" id="email" name="email">
+  <input type="email" id="email" name="email" required>
 
   <label for="phone">Phone</label>
-  <input type="text" id="phone" name="phone">
+  <input type="text" id="phone" name="phone" required>
 
   <label for="address">Address</label>
   <input type="text" id="address" name="address">
@@ -71,11 +73,15 @@
 
   <div class="section-divider"></div>
 
-  <h2>Select CV Style</h2>
-  <label><input type="radio" name="cv_style" value="classic" checked> Classic</label><br>
-  <label><input type="radio" name="cv_style" value="modern"> Modern</label><br>
-  <label><input type="radio" name="cv_style" value="creative"> Creative</label>
+  <h2>Select CV Template</h2>
+  <div class="template-row">
+    <label><input type="radio" name="template" value="cv_output" checked> Classic</label>
+    <label><input type="radio" name="template" value="cv_output1"> Modern</label>
+  </div>
 
-  <button type="submit">Generate CV (PDF)</button>
+  <div class="button-row">
+    <button type="submit" name="format" value="pdf" class="download-btn">Download PDF</button>
+    <button type="submit" name="format" value="docx" class="download-btn">Download DOCX</button>
+  </div>
 </form>
 {% endblock %}

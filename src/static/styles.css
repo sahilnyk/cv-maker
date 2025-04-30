@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
+/* BASE STYLES */
 body {
     font-family: 'Fira Code', monospace;
     background-color: #f5f5f5;
@@ -16,7 +17,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
-    border-bottom: 3px dashed #00ccff;
+    border-bottom: 3px solid #00ccff;
 }
 
 .navbar-logo {
@@ -28,12 +29,15 @@ body {
     list-style: none;
     display: flex;
     gap: 30px;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-links a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .navbar-links a:hover {
@@ -42,11 +46,12 @@ body {
 
 /* CONTAINER */
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: 40px auto;
-    background-color: white;
+    background-color: #fff;
     padding: 40px;
-    border: 2px dashed #666;
+    border: 1px solid #ccc;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* HEADINGS */
@@ -55,13 +60,38 @@ h2,
 h3 {
     color: #1e1e2f;
     text-align: center;
+    margin-top: 0;
+    letter-spacing: 0.5px;
 }
 
-/* FORMS */
-label {
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 14px;
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+/* FORM ELEMENTS */
+form h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-left: 6px solid #00ccff;
+    background-color: #eef1f6;
+    padding: 8px 12px;
+    color: #1e1e2f;
+}
+
+form label {
     display: block;
-    margin: 15px 0 5px;
+    margin-top: 25px;
+    font-size: 15px;
     font-weight: bold;
+    color: #1e1e2f;
 }
 
 input,
@@ -70,52 +100,106 @@ select {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 2px dashed #1e1e2f;
-    background-color: #eef1f6;
     font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    border: 1.5px solid #bbb;
+    background-color: #f9fafc;
+    /* border-radius: 4px; */
+    transition: border 0.3s ease, background 0.3s ease;
 }
 
-/* CV STYLES */
-.cv-output.classic {
-    background: #fff;
-    color: #000;
-    border-color: #1e1e2f;
-}
-
-.cv-output.modern {
-    background: #f0f0f0;
-    color: #222;
-    border-color: #444;
-    font-family: sans-serif;
-}
-
-.cv-output.creative {
-    background: #1e1e2f;
-    color: #00ccff;
+input:focus,
+textarea:focus,
+select:focus {
+    background-color: #fff;
     border-color: #00ccff;
+    box-shadow: 0 0 4px rgba(0, 204, 255, 0.4);
 }
 
-/* DIVIDER */
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* SECTION DIVIDER */
 .section-divider {
     margin: 40px 0;
-    border-top: 2px dashed #aaa;
+    border-top: 2px dashed #ccc;
 }
 
-/* BUTTON */
-button {
-    background: #1e1e2f;
+/* CV TEMPLATES */
+.cv-output.classic-template {
+    background-color: #fff;
+    color: #222;
+    font-family: Georgia, serif;
+    padding: 2rem;
+}
+
+.cv-output.creative-template {
+    background-color: #1e1e2f;
     color: #00ccff;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 2rem;
+}
+
+/* TEMPLATE SELECTION */
+.template-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.template-row label {
+    padding: 10px 20px;
+    border: 2px solid #484848;
+    /* border-radius: 6px; */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.template-row input[type="radio"] {
+    margin-right: 8px;
+}
+
+.template-row label:hover {
+    background-color: #00ccff;
+    color: #1e1e2f;
+}
+
+/* BUTTONS */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.button-row button {
+    min-width: 180px;
+    /* border-radius: 6px; */
+}
+
+/* Button Styles */
+button {
+    background: #191919;
+    color: #fbfbfb;
     padding: 12px 30px;
-    border: 2px dashed #00ccff;
+    border: none;
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
-    display: block;
-    margin: 20px auto 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    /* box-shadow: 2px 2px 0px #1d2c30; */
 }
 
 button:hover {
-    background: #333;
+    background: #2b2b3a;
+    box-shadow: 2px 2px 6px rgba(0, 204, 255, 0.4);
 }
 
 /* FOOTER */
@@ -124,13 +208,13 @@ button:hover {
     color: #aaa;
     text-align: center;
     padding: 20px;
-    border-top: 3px dashed #00ccff;
-    position: relative;
+    border-top: 3px solid #00ccff;
+    font-size: 14px;
 }
 
 /* CONTRIBUTORS */
 .contributor-box {
-    border: 2px dashed #999;
+    border: 1px solid #999;
     padding: 20px;
     margin: 20px 0;
     background: #f9f9f9;
@@ -138,11 +222,14 @@ button:hover {
 
 .contributor-box h3 {
     margin-top: 0;
+    font-size: 18px;
+    color: #333;
 }
 
 .contributor-box a {
     text-decoration: none;
     color: #1e1e2f;
+    font-weight: bold;
 }
 
 .contributor-box a:hover {
